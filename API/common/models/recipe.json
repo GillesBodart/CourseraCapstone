@@ -1,0 +1,44 @@
+{
+  "name": "Recipe",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    },
+    "Ingredients": {
+      "type": [
+        "object"
+      ],
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Picture": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "number",
+      "default": "0"
+    },
+    "RecipeId": {
+      "type": "number",
+      "id": true,
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

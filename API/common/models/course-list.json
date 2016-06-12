@@ -1,0 +1,34 @@
+{
+  "name": "CourseList",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "CourseItem": {
+      "type": [
+        "object"
+      ],
+      "required": true,
+      "description": "All the List of ingredients"
+    },
+    "UserId": {
+      "type": "number",
+      "id": false,
+      "required": true,
+      "index": true,
+      "description": "The related user"
+    },
+    "ListId": {
+      "type": "number",
+      "id": true,
+      "required": true,
+      "description": "The Id of the list"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

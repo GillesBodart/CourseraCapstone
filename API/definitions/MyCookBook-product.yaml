@@ -1,0 +1,25 @@
+product: 1.0.0
+info:
+  name: mycookbook
+  title: MyCookBook
+  version: 1.0.0
+  contact:
+    name: Bodart Gilles
+    email: gilles@gbodart.be
+    url: 'http://www.gbodart.be'
+apis:
+  mycookbook:
+    $ref: MyCookBook.yaml
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

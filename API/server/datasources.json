@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "Mongo": {
+    "host": "37.187.116.44",
+    "port": 27017,
+    "database": "MyCook",
+    "password": "HommrdCook&4",
+    "name": "Mongo",
+    "connector": "mongodb",
+    "user": "MyCook"
+  }
+}

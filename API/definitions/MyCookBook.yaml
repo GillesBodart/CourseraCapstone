@@ -1,0 +1,838 @@
+paths:
+  /CourseLists:
+    post:
+      tags:
+        - CourseList
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: CourseList.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/CourseList'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/CourseList'
+      deprecated: false
+    put:
+      tags:
+        - CourseList
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source.
+      operationId: CourseList.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/CourseList'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/CourseList'
+      deprecated: false
+    get:
+      tags:
+        - CourseList
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: CourseList.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CourseList'
+      deprecated: false
+  '/CourseLists/{id}/exists':
+    get:
+      tags:
+        - CourseList
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'CourseList.exists__get_CourseLists_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/CourseLists/{id}':
+    head:
+      tags:
+        - CourseList
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'CourseList.exists__head_CourseLists_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - CourseList
+      summary: Find a model instance by id from the data source.
+      operationId: CourseList.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/CourseList'
+      deprecated: false
+    delete:
+      tags:
+        - CourseList
+      summary: Delete a model instance by id from the data source.
+      operationId: CourseList.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - CourseList
+      summary: >-
+        Update attributes for a model instance and persist it into the data
+        source.
+      operationId: CourseList.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/CourseList'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/CourseList'
+      deprecated: false
+  /CourseLists/findOne:
+    get:
+      tags:
+        - CourseList
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: CourseList.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/CourseList'
+      deprecated: false
+  /CourseLists/update:
+    post:
+      tags:
+        - CourseList
+      summary: Update instances of the model matched by where from the data source.
+      operationId: CourseList.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/CourseList'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /CourseLists/count:
+    get:
+      tags:
+        - CourseList
+      summary: Count instances of the model matched by where from the data source.
+      operationId: CourseList.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /CourseLists/change-stream:
+    post:
+      tags:
+        - CourseList
+      summary: Create a change stream.
+      operationId: CourseList.createChangeStream__post_CourseLists_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - CourseList
+      summary: Create a change stream.
+      operationId: CourseList.createChangeStream__get_CourseLists_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /Ingredients:
+    post:
+      tags:
+        - Ingredient
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: Ingredient.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/Ingredient'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Ingredient'
+      deprecated: false
+    put:
+      tags:
+        - Ingredient
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source.
+      operationId: Ingredient.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/Ingredient'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Ingredient'
+      deprecated: false
+    get:
+      tags:
+        - Ingredient
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: Ingredient.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Ingredient'
+      deprecated: false
+  '/Ingredients/{id}/exists':
+    get:
+      tags:
+        - Ingredient
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Ingredient.exists__get_Ingredients_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/Ingredients/{id}':
+    head:
+      tags:
+        - Ingredient
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Ingredient.exists__head_Ingredients_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - Ingredient
+      summary: Find a model instance by id from the data source.
+      operationId: Ingredient.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Ingredient'
+      deprecated: false
+    delete:
+      tags:
+        - Ingredient
+      summary: Delete a model instance by id from the data source.
+      operationId: Ingredient.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - Ingredient
+      summary: >-
+        Update attributes for a model instance and persist it into the data
+        source.
+      operationId: Ingredient.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/Ingredient'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Ingredient'
+      deprecated: false
+  /Ingredients/findOne:
+    get:
+      tags:
+        - Ingredient
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: Ingredient.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Ingredient'
+      deprecated: false
+  /Ingredients/update:
+    post:
+      tags:
+        - Ingredient
+      summary: Update instances of the model matched by where from the data source.
+      operationId: Ingredient.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/Ingredient'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /Ingredients/count:
+    get:
+      tags:
+        - Ingredient
+      summary: Count instances of the model matched by where from the data source.
+      operationId: Ingredient.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /Ingredients/change-stream:
+    post:
+      tags:
+        - Ingredient
+      summary: Create a change stream.
+      operationId: Ingredient.createChangeStream__post_Ingredients_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - Ingredient
+      summary: Create a change stream.
+      operationId: Ingredient.createChangeStream__get_Ingredients_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /Users:
+    post:
+      tags:
+        - Users
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: Users.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/Users'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Users'
+      deprecated: false
+    put:
+      tags:
+        - Users
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source.
+      operationId: Users.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/Users'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Users'
+      deprecated: false
+    get:
+      tags:
+        - Users
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: Users.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Users'
+      deprecated: false
+  '/Users/{id}':
+    head:
+      tags:
+        - Users
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Users.exists__head_Users_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - Users
+      summary: Find a model instance by id from the data source.
+      operationId: Users.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Users'
+      deprecated: false
+    delete:
+      tags:
+        - Users
+      summary: Delete a model instance by id from the data source.
+      operationId: Users.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - Users
+      summary: >-
+        Update attributes for a model instance and persist it into the data
+        source.
+      operationId: Users.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/Users'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Users'
+      deprecated: false
+  /Users/update:
+    post:
+      tags:
+        - Users
+      summary: Update instances of the model matched by where from the data source.
+      operationId: Users.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/Users'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+definitions:
+  CourseList:
+    properties:
+      CourseItem:
+        description: All the List of ingredients
+        type: array
+        items:
+          type: object
+      UserId:
+        description: The related user
+        type: number
+        format: double
+      ListId:
+        description: The Id of the list
+        type: number
+        format: double
+    required:
+      - CourseItem
+      - UserId
+      - ListId
+    additionalProperties: false
+  x-any:
+    properties: {}
+  Ingredient:
+    properties:
+      IngredientId:
+        type: number
+        format: double
+      Name:
+        type: string
+      Price:
+        type: number
+        format: double
+      Unit:
+        type: string
+    required:
+      - IngredientId
+    additionalProperties: false
+  Users:
+    properties:
+      UserId:
+        type: number
+        format: double
+      Login:
+        type: number
+        format: double
+      password:
+        $ref: '#/definitions/x-any'
+    required:
+      - UserId
+      - Login
+      - password
+    additionalProperties: false
+swagger: '2.0'
+info:
+  x-ibm-name: mycookbook
+  version: 1.0.0
+  title: MyCookBook
+schemes:
+  - https
+host: $(catalog.host)
+basePath: /api
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'http://localhost:4001'
+    Name: {}
+    Description:
+      properties:
+        Recipe: ''
+    Ingredients:
+      properties:
+        Recipe: ''
+    Picture:
+      properties:
+        Recipe: ''
+    Price:
+      properties:
+        Ingredient: ''
+    Unit:
+      properties:
+        Ingredient: ''
+    SubCategory:
+      properties:
+        Category: ''
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)
+    catch: []

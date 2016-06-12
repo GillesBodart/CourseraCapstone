@@ -1,0 +1,32 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "Recipe": {
+    "dataSource": "db",
+    "public": true
+  },
+  "CourseList": {
+    "dataSource": "Mongo",
+    "public": true
+  },
+  "Ingredient": {
+    "dataSource": "Mongo",
+    "public": true
+  },
+  "Users": {
+    "dataSource": "Mongo",
+    "public": true
+  }
+}
